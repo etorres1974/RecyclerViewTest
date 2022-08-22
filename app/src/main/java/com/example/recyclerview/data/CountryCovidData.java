@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class CountryCovidData implements Serializable {
     String ActiveCasesText;
-    String CountryText;
+    public String CountryText;
     String NewCasesText;
     String NewDeathsText;
     String TotalCasesText;

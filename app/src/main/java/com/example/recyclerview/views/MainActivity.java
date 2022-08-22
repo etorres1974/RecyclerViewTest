@@ -1,7 +1,8 @@
-package com.example.recyclerview;
+package com.example.recyclerview.views;
 
 import android.os.Bundle;
 
+import com.example.recyclerview.R;
 import com.example.recyclerview.data.GetCovidDataListFromJson;
 import com.google.android.material.snackbar.Snackbar;
 
