@@ -3,12 +3,12 @@ package com.example.recyclerview.data;
 import java.io.Serializable;
 
 public class CountryCovidData implements Serializable {
-    String ActiveCasesText;
+    public String ActiveCasesText;
     public String CountryText;
     String NewCasesText;
     String NewDeathsText;
-    String TotalCasesText;
-    String TotalDeathsText;
+    public String TotalCasesText;
+    public String TotalDeathsText;
     String TotalRecoveredText;
 
     public CountryCovidData(String ActiveCasesText,
