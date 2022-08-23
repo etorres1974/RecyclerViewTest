@@ -20,6 +20,10 @@
         android:name="com.example.recyclerview.views.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
+        <argument
+            android:name="data"
+            app:argType="com.example.recyclerview.data.CountryCovidData"
+            android:defaultValue="@null" />
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"

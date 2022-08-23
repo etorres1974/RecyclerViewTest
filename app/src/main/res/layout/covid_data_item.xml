@@ -8,9 +8,8 @@
     android:layout_margin="16dp"
     android:backgroundTint="#BFFFFFFF"
     android:backgroundTintMode="multiply"
-
     app:cardBackgroundColor="?colorPrimary"
-    card_view:cardCornerRadius="4dp">
+    >
 
     <LinearLayout
         android:orientation="vertical"
@@ -27,36 +26,6 @@
             android:textColor="?colorOnPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_active_cases"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Active cases 123"
-            android:textColor="?colorOnPrimary"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_text"
-            />
-        <TextView
-            android:id="@+id/tv_total_cases"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tottal cases 123"
-            android:textColor="?colorOnPrimary"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_text"
-            />
-
-        <TextView
-            android:id="@+id/tv_total_deaths"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tottal deaths123"
-            android:textColor="?colorOnPrimary"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_text"
-            />
-
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

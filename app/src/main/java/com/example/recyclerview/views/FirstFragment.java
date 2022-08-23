@@ -12,16 +12,16 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.recyclerview.R;
 import com.example.recyclerview.adapter.CovidDataAdapter;
+import com.example.recyclerview.adapter.CovidDataListener;
 import com.example.recyclerview.data.CountryCovidData;
 import com.example.recyclerview.data.GetCovidDataListFromJson;
 import com.example.recyclerview.databinding.FragmentFirstBinding;
 
 import java.util.List;
 
-public class FirstFragment extends Fragment {
+public class FirstFragment extends Fragment implements CovidDataListener {
 
     private FragmentFirstBinding binding;
     private CovidDataAdapter adapter;
@@ -47,9 +47,20 @@ public class FirstFragment extends Fragment {
     public void setupAdapter(){
         layoutManager = new LinearLayoutManager(getActivity());
         List<CountryCovidData> data = new GetCovidDataListFromJson().execute(getActivity().getApplication());
-        adapter = new CovidDataAdapter(data);
+        adapter = new CovidDataAdapter(data, this);
         binding.rvCovidData.setAdapter(adapter);
         binding.rvCovidData.setLayoutManager(layoutManager);
+    }
+
+    @Override
+    public void openDetails(CountryCovidData data) {
+        //Pass data
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(DATA_KEY, data);
+        NavHostFragment
+                .findNavController(FirstFragment.this)
+                .navigate(R.id.action_FirstFragment_to_SecondFragment, bundle);
+
     }
 
     @Override
@@ -58,4 +69,5 @@ public class FirstFragment extends Fragment {
         binding = null;
     }
 
+    public static String DATA_KEY = "data";
 }

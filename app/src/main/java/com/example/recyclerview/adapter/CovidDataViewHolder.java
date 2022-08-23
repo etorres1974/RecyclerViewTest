@@ -16,25 +16,14 @@ public class CovidDataViewHolder extends RecyclerView.ViewHolder {
         this.binding = binding;
     }
 
-    public void bind(CountryCovidData data){
+    public void bind(CountryCovidData data, CovidDataListener listener){
         binding.tvText.setText(data.CountryText);
-        binding.tvActiveCases.setText( "ActiveCases : " + data.ActiveCasesText);
-        binding.tvTotalCases.setText( "TotalCases : " + data.TotalCasesText);
-        binding.tvTotalDeaths.setText( "TotalCases : " + data.TotalDeathsText);
-        hideEmptyValues(data);
-    }
-
-    public void hideEmptyValues(CountryCovidData data){
-        hideIfEmpty(binding.tvActiveCases);
-        hideIfEmpty(binding.tvTotalCases);
-        hideIfEmpty(binding.tvTotalDeaths);
-    }
-
-    public void hideIfEmpty(TextView view){
-        if(view.getText() == null || view.getText().toString().isEmpty())
-            binding.tvActiveCases.setVisibility(View.GONE);
-        else
-            binding.tvActiveCases.setVisibility(View.VISIBLE);
+        binding.getRoot().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.openDetails(data);
+            }
+        });
     }
 
     public static CovidDataViewHolder inflate(ViewGroup viewGroup){

@@ -10,8 +10,10 @@ import java.util.List;
 public class CovidDataAdapter extends RecyclerView.Adapter<CovidDataViewHolder> {
 
     private final List<CountryCovidData> localDataSet;
+    private final CovidDataListener listener;
 
-    public CovidDataAdapter(List<CountryCovidData> dataSet) {
+    public CovidDataAdapter(List<CountryCovidData> dataSet, CovidDataListener listener) {
+        this.listener = listener;
         localDataSet = dataSet;
     }
 
@@ -23,7 +25,7 @@ public class CovidDataAdapter extends RecyclerView.Adapter<CovidDataViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull CovidDataViewHolder holder, int position) {
-        holder.bind(localDataSet.get(position));
+        holder.bind(localDataSet.get(position), listener);
     }
 
     @Override

@@ -7,21 +7,70 @@
     tools:context=".views.SecondFragment">
 
     <TextView
-        android:id="@+id/textview_second"
+        android:id="@+id/tv_title"
+        android:text="Title"
+        android:textSize="24dp"
+        android:padding="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button_second"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:padding="8dp"
+        android:id="@+id/ll_cases"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/previous"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
+        >
+        <TextView
+            android:text="@string/active_cases"
+            android:id="@+id/tv_active_cases"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@string/new_cases"
+            android:id="@+id/tv_new_cases"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@string/total_cases"
+            android:id="@+id/tv_total_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:padding="8dp"
+        android:id="@+id/ll_deaths"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ll_cases"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <TextView
+            android:text="@string/new_deaths"
+            android:id="@+id/tv_new_deaths"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@string/total_deaths"
+            android:id="@+id/tv_total_deaths"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="@string/total_recovered"
+            android:id="@+id/tv_total_recovered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

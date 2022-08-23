@@ -5,11 +5,11 @@ import java.io.Serializable;
 public class CountryCovidData implements Serializable {
     public String ActiveCasesText;
     public String CountryText;
-    String NewCasesText;
-    String NewDeathsText;
+    public String NewCasesText;
+    public String NewDeathsText;
     public String TotalCasesText;
     public String TotalDeathsText;
-    String TotalRecoveredText;
+    public String TotalRecoveredText;
 
     public CountryCovidData(String ActiveCasesText,
                             String CountryText,
